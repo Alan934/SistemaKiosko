@@ -22,5 +22,10 @@ namespace CapaNegocio
             return objReporte.Venta(fechaInicio, fechaFin);
         }
 
+        public List<ReporteVenta> ReporteTotal(string fechaInicio, string fechaFin)
+        {
+            return objReporte.ReporteTotal(fechaInicio, fechaFin);
+        }
+
     }
 }

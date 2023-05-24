@@ -31,7 +31,6 @@ C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKios
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKiosko.Modales.MDProveedor.resources
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKiosko.Modales.MDProducto.resources
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKiosko.frmDetalleCompra.resources
-C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\itextsharp.dll
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\itextsharp.xml
@@ -45,3 +44,8 @@ C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\SistemaKi
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\SistemaKiosko.pdb
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\SistemaKiosko.exe
 C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\SistemaKiosko.pdb
+C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKiosko.frmReportes.resources
+C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\obj\Debug\StockKiosko.frmReporteTotal.resources
+C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\MegaTecnologia\source\repos\StockKiosko\StockKiosko\bin\Debug\BouncyCastle.Cryptography.xml

@@ -126,6 +126,9 @@ namespace StockKiosko
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
                             row.Cells[12].Value.ToString(),
+                            row.Cells[13].Value.ToString(),
+                            row.Cells[14].Value.ToString(),
+                            row.Cells[15].Value.ToString(),
                             });
                         }
                     }

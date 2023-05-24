@@ -45,6 +45,7 @@
             this.menuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuReporteCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuReporteVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuReporteTotal = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAcercaDe = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
@@ -236,7 +237,8 @@
             this.menuReportes.AutoSize = false;
             this.menuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subMenuReporteCompras,
-            this.subMenuReporteVentas});
+            this.subMenuReporteVentas,
+            this.subMenuReporteTotal});
             this.menuReportes.IconChar = FontAwesome.Sharp.IconChar.BarChart;
             this.menuReportes.IconColor = System.Drawing.Color.Black;
             this.menuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -250,16 +252,23 @@
             // subMenuReporteCompras
             // 
             this.subMenuReporteCompras.Name = "subMenuReporteCompras";
-            this.subMenuReporteCompras.Size = new System.Drawing.Size(166, 22);
+            this.subMenuReporteCompras.Size = new System.Drawing.Size(180, 22);
             this.subMenuReporteCompras.Text = "Reporte Compras";
             this.subMenuReporteCompras.Click += new System.EventHandler(this.subMenuReporteCompras_Click);
             // 
             // subMenuReporteVentas
             // 
             this.subMenuReporteVentas.Name = "subMenuReporteVentas";
-            this.subMenuReporteVentas.Size = new System.Drawing.Size(166, 22);
+            this.subMenuReporteVentas.Size = new System.Drawing.Size(180, 22);
             this.subMenuReporteVentas.Text = "Reporte Ventas";
             this.subMenuReporteVentas.Click += new System.EventHandler(this.subMenuReporteVentas_Click);
+            // 
+            // subMenuReporteTotal
+            // 
+            this.subMenuReporteTotal.Name = "subMenuReporteTotal";
+            this.subMenuReporteTotal.Size = new System.Drawing.Size(180, 22);
+            this.subMenuReporteTotal.Text = "Reporte General";
+            this.subMenuReporteTotal.Click += new System.EventHandler(this.subMenuReporteTotal_Click);
             // 
             // menuAcercaDe
             // 
@@ -397,6 +406,7 @@
         private FontAwesome.Sharp.IconMenuItem menuUsuarios;
         private FontAwesome.Sharp.IconMenuItem menuAcercaDe;
         private FontAwesome.Sharp.IconButton btnSalir;
+        private System.Windows.Forms.ToolStripMenuItem subMenuReporteTotal;
     }
 }
 

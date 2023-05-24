@@ -139,5 +139,10 @@ namespace StockKiosko
         {
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
         }
+
+        private void subMenuReporteTotal_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuReportes, new frmReporteTotal());
+        }
     }
 }

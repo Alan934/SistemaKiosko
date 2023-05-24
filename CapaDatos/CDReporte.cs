@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace CapaDatos
 {
@@ -73,9 +74,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("FechaInicio", fechainicio);
                     cmd.Parameters.AddWithValue("FechaFin", fechafin);
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -101,6 +100,59 @@ namespace CapaDatos
                             });
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<ReporteVenta>();
+                }
+            }
+            return lista;
+        }
+
+        public List<ReporteVenta> ReporteTotal(string fechainicio, string fechafin)
+        {
+            List<ReporteVenta> lista = new List<ReporteVenta>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                decimal PrecioCompra = 0;
+                decimal PrecioVenta = 0;
+                decimal Cantidad = 0;
+                decimal SubTotal = 0;
+                decimal GananciaTotal = 0;
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    SqlCommand cmd = new SqlCommand("SPREPORTEVENTAS", oconexion);
+                    cmd.Parameters.AddWithValue("FechaInicio", fechainicio);
+                    cmd.Parameters.AddWithValue("FechaFin", fechafin);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            string PrecioCompraS = dr["PrecioCompra"].ToString();
+                            PrecioCompra += Convert.ToDecimal(PrecioCompraS);
+                            string PrecioVentaS = dr["PrecioVenta"].ToString();
+                            PrecioVenta += Convert.ToDecimal(PrecioVentaS);
+                            string CantidadS = dr["Cantidad"].ToString();
+                            Cantidad += Convert.ToDecimal(CantidadS);
+                            string SubTotalS = dr["SubTotal"].ToString();
+                            SubTotal += Convert.ToDecimal(SubTotalS);
+                            string GananciaTotalS = ((Convert.ToDecimal(dr["PrecioVenta"]) * Convert.ToDecimal(dr["Cantidad"])) - (Convert.ToDecimal(dr["PrecioCompra"]) * Convert.ToDecimal(dr["Cantidad"]))).ToString();
+                            GananciaTotal += Convert.ToDecimal(GananciaTotalS);
+                        }
+                    }
+                    lista.Add(new ReporteVenta()
+                    {
+                        PrecioCompra = PrecioCompra.ToString("0.00"),
+                        PrecioVenta = PrecioVenta.ToString("0.00"),
+                        Cantidad = Cantidad.ToString(),
+                        SubTotal = SubTotal.ToString("0.00"),
+                        Ganancia = Math.Round((PrecioVenta/Cantidad),2),
+                        GananciaTotal = Math.Round((GananciaTotal),2)
+                    });
                 }
                 catch (Exception ex)
                 {
